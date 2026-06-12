@@ -152,7 +152,7 @@ st.write("")
 
 support_cols = st.columns(len(MOODS))
 with support_cols[2]:
-    get_support_clicked = st.button("Get support ✨", key="get_support")
+    get_support_clicked = st.button("✨ Get support ✨", key="get_support")
 
 if get_support_clicked:
     if st.session_state.mood and st.session_state.need:
