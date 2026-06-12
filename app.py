@@ -81,6 +81,11 @@ st.markdown(
     div.stButton > button[kind="primary"] {
         font-weight: 700;
     }
+    div[data-testid="stHorizontalBlock"] div[data-testid="stColumn"] {
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        width: 0 !important;
+    }
     div[class*="st-key-mood_"] {
         min-width: 0 !important;
     }
