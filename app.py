@@ -112,6 +112,7 @@ for col, mood in zip(mood_cols, MOODS):
             type="primary" if is_selected else "secondary",
         ):
             st.session_state.mood = mood
+            st.rerun()
 
 st.markdown("### What do you need today?")
 need_cols = st.columns(len(NEEDS))
@@ -124,6 +125,7 @@ for col, need in zip(need_cols, NEEDS):
             type="primary" if is_selected else "secondary",
         ):
             st.session_state.need = need
+            st.rerun()
 
 st.write("")
 
