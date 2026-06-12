@@ -81,6 +81,16 @@ st.markdown(
         text-align: center;
         transition: all 0.15s ease;
     }
+    div[class*="st-key-mood_card_"] [data-testid="stImage"],
+    div[class*="st-key-mood_card_"] [data-testid="stImage"] > div,
+    div[class*="st-key-need_card_"] [data-testid="stImage"],
+    div[class*="st-key-need_card_"] [data-testid="stImage"] > div {
+        display: flex;
+        justify-content: center;
+    }
+    div[class*="st-key-mood_card_"] [data-testid="stImage"] img {
+        margin: 0 auto;
+    }
     .st-key-get_support {
         display: flex !important;
         justify-content: center !important;
