@@ -9,10 +9,22 @@ with open("messages.json", encoding="utf-8") as f:
 
 MOODS = list(VALIDATIONS.keys())
 
+MOOD_DESCRIPTIONS = {
+    "Overwhelmed": "Too much to do",
+    "Exhausted": "Sleep deprivation",
+    "Anxious": "Worry and uncertainty",
+    "Lonely": "Isolation",
+    "Good Today": "Positive reinforcement",
+}
+
 st.title("💛 Postpartum Companion")
 st.write("Select how you're feeling right now.")
 
-mood = st.selectbox("How are you feeling?", MOODS)
+mood = st.selectbox(
+    "How are you feeling?",
+    MOODS,
+    format_func=lambda m: f"{m} - {MOOD_DESCRIPTIONS[m]}",
+)
 
 if st.button("Get support"):
     st.success(random.choice(VALIDATIONS[mood]))
