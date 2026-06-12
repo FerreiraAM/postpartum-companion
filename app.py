@@ -14,6 +14,13 @@ MOOD_ICONS = {
     "Lonely": "assets/lonely.svg",
     "Good Day": "assets/good_day.svg",
 }
+MOOD_COLORS = {
+    "Overwhelmed": "#fbd9d9",
+    "Exhausted": "#e3def4",
+    "Anxious": "#fbe6c2",
+    "Lonely": "#cfe7ee",
+    "Good Day": "#d9ecd4",
+}
 MOODS = list(VALIDATIONS.keys())
 
 NEED_ICONS = {
@@ -21,6 +28,12 @@ NEED_ICONS = {
     "Encouragement": "🌱",
     "Perspective": "☀️",
     "Self-compassion": "🫶",
+}
+NEED_COLORS = {
+    "Validation": "#fbd9d9",
+    "Encouragement": "#d9ecd4",
+    "Perspective": "#fbe6c2",
+    "Self-compassion": "#e3def4",
 }
 NEEDS = list(NEED_ICONS.keys())
 
@@ -42,37 +55,29 @@ st.markdown(
     }
     div.stButton > button {
         width: 100%;
-        border-radius: 12px;
-        border: 1px solid #f1d9d3;
-        background-color: #fffaf8;
+        border: none;
+        background-color: transparent;
         color: #5b3a52;
-        padding: 0.6rem 0.5rem;
+        padding: 0.3rem 0.5rem;
         font-weight: 500;
         transition: all 0.15s ease;
     }
     div.stButton > button:hover {
-        border-color: #e8a4a4;
-        background-color: #fdeae6;
         color: #5b3a52;
+        text-decoration: underline;
     }
     div.stButton > button:focus:not(:active) {
-        border-color: #d98a8a;
         color: #5b3a52;
     }
     div.stButton > button[kind="primary"] {
-        background-color: #f6c9c4;
-        border-color: #e8a4a4;
-        color: #5b3a52;
+        font-weight: 700;
     }
-    div.stButton > button[kind="primary"]:hover {
-        background-color: #f3b9b3;
-        border-color: #e29696;
-        color: #5b3a52;
-    }
-    div.stButton > button[kind="primary"]:focus:not(:active) {
-        background-color: #f6c9c4;
-        border-color: #e29696;
-        color: #5b3a52;
+    div[class*="st-key-mood_card_"], div[class*="st-key-need_card_"] {
+        border-radius: 14px;
+        border: 1px solid #f1d9d3;
+        padding: 0.75rem 0.5rem 0.25rem 0.5rem;
+        text-align: center;
+        transition: all 0.15s ease;
     }
     .st-key-get_support {
         display: flex !important;
@@ -134,27 +139,59 @@ mood_cols = st.columns(len(MOODS))
 for col, mood in zip(mood_cols, MOODS):
     with col:
         is_selected = st.session_state.mood == mood
-        st.image(MOOD_ICONS[mood])
-        if st.button(
-            mood,
-            key=f"mood_{mood}",
-            type="primary" if is_selected else "secondary",
-        ):
-            st.session_state.mood = mood
-            st.rerun()
+        slug = mood.replace(" ", "_").lower()
+        border = "2px solid #c97b87" if is_selected else "1px solid #f1d9d3"
+        shadow = "0 2px 8px rgba(201, 123, 135, 0.25)" if is_selected else "none"
+        st.markdown(
+            f"""
+            <style>
+            div[class*="st-key-mood_card_{slug}"] {{
+                background-color: {MOOD_COLORS[mood]}55;
+                border: {border};
+                box-shadow: {shadow};
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
+        with st.container(key=f"mood_card_{slug}"):
+            st.image(MOOD_ICONS[mood])
+            if st.button(
+                mood,
+                key=f"mood_{slug}",
+                type="primary" if is_selected else "secondary",
+            ):
+                st.session_state.mood = mood
+                st.rerun()
 
 st.markdown("### What do you need today?")
 need_cols = st.columns(len(NEEDS))
 for col, need in zip(need_cols, NEEDS):
     with col:
         is_selected = st.session_state.need == need
-        if st.button(
-            f"{NEED_ICONS[need]} {need}",
-            key=f"need_{need}",
-            type="primary" if is_selected else "secondary",
-        ):
-            st.session_state.need = need
-            st.rerun()
+        slug = need.replace(" ", "_").replace("-", "_").lower()
+        border = "2px solid #c97b87" if is_selected else "1px solid #f1d9d3"
+        shadow = "0 2px 8px rgba(201, 123, 135, 0.25)" if is_selected else "none"
+        st.markdown(
+            f"""
+            <style>
+            div[class*="st-key-need_card_{slug}"] {{
+                background-color: {NEED_COLORS[need]}55;
+                border: {border};
+                box-shadow: {shadow};
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
+        with st.container(key=f"need_card_{slug}"):
+            if st.button(
+                f"{NEED_ICONS[need]} {need}",
+                key=f"need_{slug}",
+                type="primary" if is_selected else "secondary",
+            ):
+                st.session_state.need = need
+                st.rerun()
 
 st.write("")
 
