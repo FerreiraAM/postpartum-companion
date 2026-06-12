@@ -80,7 +80,6 @@ st.markdown(
         padding: 0.75rem 0.5rem 0.25rem 0.5rem;
         text-align: center;
         transition: all 0.15s ease;
-        position: relative;
     }
     div[class*="st-key-mood_card_"] [data-testid="stImage"],
     div[class*="st-key-mood_card_"] [data-testid="stImage"] > div,
@@ -88,26 +87,9 @@ st.markdown(
     div[class*="st-key-need_card_"] [data-testid="stImage"] > div {
         display: flex;
         justify-content: center;
-        pointer-events: none;
     }
     div[class*="st-key-mood_card_"] [data-testid="stImage"] img {
         margin: 0 auto;
-    }
-    div[class*="st-key-mood_card_"] div.stButton,
-    div[class*="st-key-need_card_"] div.stButton {
-        position: absolute;
-        inset: 0;
-    }
-    div[class*="st-key-mood_card_"] div.stButton > button,
-    div[class*="st-key-need_card_"] div.stButton > button {
-        width: 100%;
-        height: 100%;
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: center;
-        padding-bottom: 0.5rem;
-        cursor: pointer;
-        white-space: normal;
     }
     .st-key-get_support {
         display: flex !important;
