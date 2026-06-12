@@ -80,7 +80,7 @@ st.markdown(
         color: #ffffff !important;
         font-size: 1.1rem !important;
         font-weight: 600 !important;
-        padding: 0.7rem 1rem !important;
+        padding: 0.7rem 1.5rem !important;
         border-radius: 999px !important;
         width: 100% !important;
         white-space: nowrap !important;
