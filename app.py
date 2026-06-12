@@ -75,14 +75,19 @@ st.markdown(
         color: #5b3a52;
     }
     .st-key-get_support button {
-        background-color: #c97b87;
-        border-color: #c97b87;
-        color: #ffffff;
-        font-size: 1.1rem;
-        font-weight: 600;
-        padding: 0.7rem 2.5rem;
-        border-radius: 999px;
-        width: 100%;
+        background-color: #c97b87 !important;
+        border-color: #c97b87 !important;
+        color: #ffffff !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        padding: 0.7rem 2.5rem !important;
+        border-radius: 999px !important;
+        width: 100% !important;
+    }
+    .st-key-get_support button:hover {
+        background-color: #b96874 !important;
+        border-color: #b96874 !important;
+        color: #ffffff !important;
     }
     .st-key-get_support button:hover {
         background-color: #b96874;
