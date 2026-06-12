@@ -74,6 +74,21 @@ st.markdown(
         border-color: #e29696;
         color: #5b3a52;
     }
+    .st-key-get_support button {
+        background-color: #c97b87;
+        border-color: #c97b87;
+        color: #ffffff;
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 0.7rem 2.5rem;
+        border-radius: 999px;
+        width: 100%;
+    }
+    .st-key-get_support button:hover {
+        background-color: #b96874;
+        border-color: #b96874;
+        color: #ffffff;
+    }
     .result-card {
         background-color: #ffffff;
         border-radius: 16px;
@@ -129,7 +144,11 @@ for col, need in zip(need_cols, NEEDS):
 
 st.write("")
 
-if st.button("Get support ✨"):
+_, center_col, _ = st.columns([1, 2, 1])
+with center_col:
+    get_support_clicked = st.button("Get support ✨", key="get_support")
+
+if get_support_clicked:
     if st.session_state.mood and st.session_state.need:
         message = random.choice(VALIDATIONS[st.session_state.mood][st.session_state.need])
         st.markdown(f"<div class='result-card'>{message}</div>", unsafe_allow_html=True)
