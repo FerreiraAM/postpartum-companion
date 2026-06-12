@@ -118,7 +118,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.markdown("# 💛 Postpartum Companion")
+st.markdown("# Postpartum Companion")
 st.markdown(
     "<p class='subtitle'>You're doing better than you think.</p>",
     unsafe_allow_html=True,
