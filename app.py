@@ -74,6 +74,10 @@ st.markdown(
         border-color: #e29696;
         color: #5b3a52;
     }
+    .st-key-get_support {
+        display: flex;
+        justify-content: center;
+    }
     .st-key-get_support button {
         background-color: #c97b87;
         border-color: #c97b87;
@@ -82,7 +86,7 @@ st.markdown(
         font-weight: 600;
         padding: 0.7rem 2.5rem;
         border-radius: 999px;
-        width: 100%;
+        width: auto;
     }
     .st-key-get_support button:hover {
         background-color: #b96874;
@@ -144,9 +148,7 @@ for col, need in zip(need_cols, NEEDS):
 
 st.write("")
 
-_, center_col, _ = st.columns([1, 2, 1])
-with center_col:
-    get_support_clicked = st.button("Get support ✨", key="get_support")
+get_support_clicked = st.button("Get support ✨", key="get_support")
 
 if get_support_clicked:
     if st.session_state.mood and st.session_state.need:
