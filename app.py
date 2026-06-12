@@ -60,6 +60,8 @@ st.markdown(
         color: #5b3a52;
         padding: 0.3rem 0.5rem;
         font-weight: 500;
+        text-align: center;
+        justify-content: center;
         transition: all 0.15s ease;
     }
     div.stButton > button:hover {
