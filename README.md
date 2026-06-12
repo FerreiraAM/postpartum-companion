@@ -6,8 +6,9 @@ A simple Streamlit app offering mood-based validation messages for postpartum pa
 
 ## How it works
 
-1. Select how you're feeling from five moods (happy, sad, exhausted, anxious, frustrated).
-2. Click "Get support" to receive a random, supportive validation message for that mood.
+1. Select how you're feeling from five moods (Overwhelmed, Exhausted, Anxious, Lonely, Good Day).
+2. Select what you need today (Validation, Encouragement, Perspective, Self-compassion).
+3. Click "Get support" to receive a random, supportive message tailored to your mood and need.
 
 ## Running locally
 
