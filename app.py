@@ -59,6 +59,21 @@ st.markdown(
         border-color: #d98a8a;
         color: #5b3a52;
     }
+    div.stButton > button[kind="primary"] {
+        background-color: #f6c9c4;
+        border-color: #e8a4a4;
+        color: #5b3a52;
+    }
+    div.stButton > button[kind="primary"]:hover {
+        background-color: #f3b9b3;
+        border-color: #e29696;
+        color: #5b3a52;
+    }
+    div.stButton > button[kind="primary"]:focus:not(:active) {
+        background-color: #f6c9c4;
+        border-color: #e29696;
+        color: #5b3a52;
+    }
     .result-card {
         background-color: #ffffff;
         border-radius: 16px;
@@ -90,22 +105,27 @@ st.markdown("### How are you feeling right now?")
 mood_cols = st.columns(len(MOODS))
 for col, mood in zip(mood_cols, MOODS):
     with col:
-        if st.button(f"{MOOD_EMOJIS[mood]}\n{mood}", key=f"mood_{mood}"):
+        is_selected = st.session_state.mood == mood
+        if st.button(
+            f"{MOOD_EMOJIS[mood]}\n{mood}",
+            key=f"mood_{mood}",
+            type="primary" if is_selected else "secondary",
+        ):
             st.session_state.mood = mood
 
 st.markdown("### What do you need today?")
 need_cols = st.columns(len(NEEDS))
 for col, need in zip(need_cols, NEEDS):
     with col:
-        if st.button(f"{NEED_ICONS[need]} {need}", key=f"need_{need}"):
+        is_selected = st.session_state.need == need
+        if st.button(
+            f"{NEED_ICONS[need]} {need}",
+            key=f"need_{need}",
+            type="primary" if is_selected else "secondary",
+        ):
             st.session_state.need = need
 
 st.write("")
-
-if st.session_state.mood:
-    st.caption(f"Mood: {MOOD_EMOJIS[st.session_state.mood]} {st.session_state.mood}")
-if st.session_state.need:
-    st.caption(f"Need: {NEED_ICONS[st.session_state.need]} {st.session_state.need}")
 
 if st.button("Get support ✨"):
     if st.session_state.mood and st.session_state.need:
