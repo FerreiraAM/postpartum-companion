@@ -3,17 +3,17 @@ import json
 import random
 import streamlit as st
 
-st.set_page_config(page_title="Postpartum Companion", page_icon="💛", layout="centered")
+st.set_page_config(page_title="Postpartum Companion", page_icon="💛", layout="wide")
 
 with open("messages.json", encoding="utf-8") as f:
     VALIDATIONS = json.load(f)
 
 MOOD_ICONS = {
-    "Overwhelmed": "assets/overwhelmed.svg",
-    "Exhausted": "assets/exhausted.svg",
-    "Anxious": "assets/anxious.svg",
-    "Lonely": "assets/lonely.svg",
-    "Good Day": "assets/good_day.svg",
+    "Overwhelmed": "assets/card_overwhelmed.svg",
+    "Exhausted": "assets/card_exhausted.svg",
+    "Anxious": "assets/card_anxious.svg",
+    "Lonely": "assets/card_lonely.svg",
+    "Good Day": "assets/card_good_day.svg",
 }
 MOOD_COLORS = {
     "Overwhelmed": "#fbd9d9",
@@ -25,10 +25,10 @@ MOOD_COLORS = {
 MOODS = list(VALIDATIONS.keys())
 
 NEED_ICONS = {
-    "Validation": "💗",
-    "Encouragement": "🌱",
-    "Perspective": "☀️",
-    "Self-compassion": "🫶",
+    "Validation": "assets/card_validation.svg",
+    "Encouragement": "assets/card_encouragement.svg",
+    "Perspective": "assets/card_perspective.svg",
+    "Self-compassion": "assets/card_self_compassion.svg",
 }
 NEED_COLORS = {
     "Validation": "#fbd9d9",
@@ -83,37 +83,29 @@ st.markdown(
     }
     div[data-testid="stHorizontalBlock"] div[data-testid="stColumn"] {
         flex: 1 1 0 !important;
-        min-width: 0 !important;
         width: 0 !important;
-    }
-    div[class*="st-key-mood_"] {
         min-width: 0 !important;
+    }
+    div[class*="st-key-mood_"] > div.stButton > button,
+    div[class*="st-key-need_"] > div.stButton > button {
+        width: 17vw !important;
+        max-width: 200px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-size: contain !important;
+        border-radius: 14px !important;
+        color: transparent !important;
+        font-size: 0 !important;
+        line-height: 0 !important;
+        padding: 0 !important;
     }
     div[class*="st-key-mood_"] > div.stButton > button {
-        height: 140px !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        box-sizing: border-box !important;
-        flex-direction: column !important;
-        justify-content: flex-end !important;
-        background-repeat: no-repeat !important;
-        background-position: top center !important;
-        background-size: 80px 70px !important;
-        padding-bottom: 0.5rem !important;
-        padding-top: 75px !important;
-        border-radius: 14px !important;
-        white-space: nowrap !important;
-        overflow: hidden !important;
+        aspect-ratio: 260 / 250 !important;
     }
     div[class*="st-key-need_"] > div.stButton > button {
-        height: 70px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        border-radius: 14px !important;
-        white-space: nowrap !important;
-        overflow: hidden !important;
-        font-size: 0.85rem !important;
-        padding: 0 0.25rem !important;
+        aspect-ratio: 260 / 70 !important;
     }
     .st-key-get_support {
         display: flex !important;
@@ -172,24 +164,22 @@ if "need" not in st.session_state:
 
 st.markdown("### How are you feeling right now?")
 mood_cols = st.columns(len(MOODS))
+mood_css_rules = []
 for col, mood in zip(mood_cols, MOODS):
     with col:
         is_selected = st.session_state.mood == mood
         slug = mood.replace(" ", "_").lower()
         border = "2px solid #c97b87" if is_selected else "1px solid #f1d9d3"
         shadow = "0 2px 8px rgba(201, 123, 135, 0.25)" if is_selected else "none"
-        st.markdown(
+        mood_css_rules.append(
             f"""
-            <style>
             div[class*="st-key-mood_{slug}"] > div.stButton > button {{
                 background-color: {MOOD_COLORS[mood]}55;
                 border: {border};
                 box-shadow: {shadow};
                 background-image: url("{svg_data_uri(MOOD_ICONS[mood])}");
             }}
-            </style>
-            """,
-            unsafe_allow_html=True,
+            """
         )
         if st.button(
             mood,
@@ -198,34 +188,35 @@ for col, mood in zip(mood_cols, MOODS):
         ):
             st.session_state.mood = mood
             st.rerun()
+st.markdown(f"<style>{''.join(mood_css_rules)}</style>", unsafe_allow_html=True)
 
 st.markdown("### What do you need today?")
 need_cols = st.columns(len(NEEDS))
+need_css_rules = []
 for col, need in zip(need_cols, NEEDS):
     with col:
         is_selected = st.session_state.need == need
         slug = need.replace(" ", "_").replace("-", "_").lower()
         border = "2px solid #c97b87" if is_selected else "1px solid #f1d9d3"
         shadow = "0 2px 8px rgba(201, 123, 135, 0.25)" if is_selected else "none"
-        st.markdown(
+        need_css_rules.append(
             f"""
-            <style>
             div[class*="st-key-need_{slug}"] > div.stButton > button {{
                 background-color: {NEED_COLORS[need]}55;
                 border: {border};
                 box-shadow: {shadow};
+                background-image: url("{svg_data_uri(NEED_ICONS[need])}");
             }}
-            </style>
-            """,
-            unsafe_allow_html=True,
+            """
         )
         if st.button(
-            f"{NEED_ICONS[need]} {need}",
+            need,
             key=f"need_{slug}",
             type="primary" if is_selected else "secondary",
         ):
             st.session_state.need = need
             st.rerun()
+st.markdown(f"<style>{''.join(need_css_rules)}</style>", unsafe_allow_html=True)
 
 st.write("")
 
