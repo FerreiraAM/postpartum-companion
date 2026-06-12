@@ -20,7 +20,7 @@ NEED_ICONS = {
     "Validation": "💗",
     "Encouragement": "🌱",
     "Perspective": "☀️",
-    "Self-compassion": "☁️",
+    "Self-compassion": "🫶",
 }
 NEEDS = list(NEED_ICONS.keys())
 
