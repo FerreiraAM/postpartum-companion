@@ -7,12 +7,12 @@ st.set_page_config(page_title="Postpartum Companion", page_icon="💛", layout="
 with open("messages.json", encoding="utf-8") as f:
     VALIDATIONS = json.load(f)
 
-MOOD_EMOJIS = {
-    "Overwhelmed": "😣",
-    "Exhausted": "😴",
-    "Anxious": "😟",
-    "Lonely": "🥺",
-    "Good Day": "😊",
+MOOD_ICONS = {
+    "Overwhelmed": "assets/overwhelmed.svg",
+    "Exhausted": "assets/exhausted.svg",
+    "Anxious": "assets/anxious.svg",
+    "Lonely": "assets/lonely.svg",
+    "Good Day": "assets/good_day.svg",
 }
 MOODS = list(VALIDATIONS.keys())
 
@@ -134,8 +134,9 @@ mood_cols = st.columns(len(MOODS))
 for col, mood in zip(mood_cols, MOODS):
     with col:
         is_selected = st.session_state.mood == mood
+        st.image(MOOD_ICONS[mood])
         if st.button(
-            f"{MOOD_EMOJIS[mood]}\n{mood}",
+            mood,
             key=f"mood_{mood}",
             type="primary" if is_selected else "secondary",
         ):
