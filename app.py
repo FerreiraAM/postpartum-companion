@@ -18,8 +18,8 @@ MOODS = list(VALIDATIONS.keys())
 
 NEED_ICONS = {
     "Validation": "💗",
-    "Encouragement": "☀️",
-    "Perspective": "🌿",
+    "Encouragement": "🌱",
+    "Perspective": "☀️",
     "Self-compassion": "☁️",
 }
 NEEDS = list(NEED_ICONS.keys())
