@@ -115,9 +115,9 @@ st.markdown(
         background-color: #c97b87 !important;
         border-color: #c97b87 !important;
         color: #ffffff !important;
-        font-size: 1rem !important;
+        font-size: clamp(0.75rem, 2.5vw, 1rem) !important;
         font-weight: 600 !important;
-        padding: 0.7rem 1.25rem !important;
+        padding: clamp(0.4rem, 1.8vw, 0.7rem) clamp(0.7rem, 3vw, 1.25rem) !important;
         border-radius: 999px !important;
         width: auto !important;
         white-space: nowrap !important;
