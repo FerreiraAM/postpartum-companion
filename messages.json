@@ -1,27 +1,112 @@
 {
-  "Overwhelmed": [
-    "It's okay if you can't do it all. You don't have to handle everything today.",
-    "Taking it one small step at a time is still progress.",
-    "Feeling overwhelmed doesn't mean you're failing — it means you're carrying a lot."
-  ],
-  "Exhausted": [
-    "Of course you're exhausted — you're doing one of the hardest jobs there is.",
-    "Rest when you can. Your body is working incredibly hard.",
-    "Being tired doesn't mean you're failing. It means you're human."
-  ],
-  "Anxious": [
-    "Anxiety after birth is so common. You are not alone in this.",
-    "It's okay to worry — it means you care deeply. Try to take one breath at a time.",
-    "These feelings don't define you. They're a phase, not forever."
-  ],
-  "Lonely": [
-    "Even when it feels like no one understands, your feelings are real and valid.",
-    "Reaching out, even in small ways, can help — and you deserve support.",
-    "You're not alone, even when it feels that way."
-  ],
-  "Good Day": [
-    "It's wonderful that you're feeling good today. You deserve these moments of joy.",
-    "Your happiness matters. Soak it in.",
-    "You're doing great, and it shows."
-  ]
+  "Overwhelmed": {
+    "Validation": [
+      "Anyone juggling as much as you are would feel overwhelmed. Your feelings make sense.",
+      "It's completely understandable to feel like there's too much right now.",
+      "You're not the only one feeling this way."
+    ],
+    "Encouragement": [
+      "You don't have to do it all today — getting through this moment is enough.",
+      "This phase is hard, and you're doing better than you think.",
+      "One small step at a time still counts as progress."
+    ],
+    "Perspective": [
+      "Most of what feels urgent right now won't matter in a week. It's okay to let some things go.",
+      "Many mothers struggle with these same thoughts when everything piles up at once.",
+      "This intensity is temporary, even when it doesn't feel that way."
+    ],
+    "Self-compassion": [
+      "Needing support does not mean you're failing.",
+      "You're allowed to put things down, even just for a moment.",
+      "Be as kind to yourself as you would be to a friend feeling this way."
+    ]
+  },
+  "Exhausted": {
+    "Validation": [
+      "Anyone sleeping as little as you are would be struggling. Your feelings make sense.",
+      "Your exhaustion is real, not a sign of weakness.",
+      "You're not the only one feeling this way."
+    ],
+    "Encouragement": [
+      "Rest when you can — even small moments of rest add up.",
+      "This phase is hard, and you're doing better than you think.",
+      "You're carrying so much, and you're still showing up."
+    ],
+    "Perspective": [
+      "Sleep deprivation affects everyone this way — it's biology, not a personal failing.",
+      "Many mothers struggle with these same thoughts during this stage.",
+      "This level of tiredness won't last forever, even when each day feels endless."
+    ],
+    "Self-compassion": [
+      "Needing support does not mean you're failing.",
+      "It's okay to lower your expectations of yourself right now.",
+      "Your worth isn't measured by how much you get done while running on empty."
+    ]
+  },
+  "Anxious": {
+    "Validation": [
+      "Anyone facing this much uncertainty would feel anxious. Your feelings make sense.",
+      "Your worry comes from how much you care — it's a valid response.",
+      "You're not the only one feeling this way."
+    ],
+    "Encouragement": [
+      "You've gotten through hard moments before, and you can get through this one too.",
+      "This phase is hard, and you're doing better than you think.",
+      "Taking one breath at a time is enough for right now."
+    ],
+    "Perspective": [
+      "Anxiety after birth is incredibly common — it doesn't mean something is wrong with you.",
+      "Many mothers struggle with these same thoughts, especially in the early months.",
+      "These worries often feel bigger at night or when you're tired than they really are."
+    ],
+    "Self-compassion": [
+      "Needing support does not mean you're failing.",
+      "It's okay to not have all the answers right now.",
+      "You're allowed to ask for reassurance as many times as you need."
+    ]
+  },
+  "Lonely": {
+    "Validation": [
+      "Anyone feeling this isolated would feel lonely. Your feelings make sense.",
+      "It's real that this can feel like a very isolating time, even when you're never physically alone.",
+      "You're not the only one feeling this way."
+    ],
+    "Encouragement": [
+      "Reaching out, even in small ways, can help — and you deserve support.",
+      "This phase is hard, and you're doing better than you think.",
+      "Connection doesn't have to be big to matter — a short message to someone counts."
+    ],
+    "Perspective": [
+      "Many mothers struggle with these same thoughts, even when surrounded by people.",
+      "Loneliness in early parenthood is common, even though it isn't talked about enough.",
+      "This isolated feeling tends to ease as routines and connections settle over time."
+    ],
+    "Self-compassion": [
+      "Needing support does not mean you're failing.",
+      "You deserve company and care, not just for your baby's sake but for your own.",
+      "It's okay to miss your old life and your old self while still loving this new one."
+    ]
+  },
+  "Good Day": {
+    "Validation": [
+      "Feeling good today is valid too — you don't need to brace for it to end.",
+      "Your happiness matters just as much as your hard moments.",
+      "You're allowed to simply enjoy this without guilt."
+    ],
+    "Encouragement": [
+      "You're doing great, and today is proof of that.",
+      "This phase is hard, and on days like today, you're doing better than you think.",
+      "Soak this moment in — you've earned it."
+    ],
+    "Perspective": [
+      "Good days are signs of progress, even if tomorrow looks different.",
+      "Many mothers find that good days, however small, help carry them through harder ones.",
+      "It's okay for things to feel lighter sometimes — that's part of healing too."
+    ],
+    "Self-compassion": [
+      "Needing support does not mean you're failing — and neither does feeling okay today.",
+      "You don't have to earn good days. You deserve them.",
+      "Let yourself feel good without waiting for the other shoe to drop."
+    ]
+  }
 }
