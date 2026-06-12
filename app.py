@@ -84,6 +84,9 @@ st.markdown(
         border-radius: 999px !important;
         width: 100% !important;
         white-space: nowrap !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
     .st-key-get_support button:hover {
         background-color: #b96874 !important;
