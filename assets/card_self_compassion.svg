@@ -1,4 +1,14 @@
 <svg viewBox="0 0 260 70" xmlns="http://www.w3.org/2000/svg">
-  <text x="40" y="44" font-size="32" text-anchor="middle">🫶</text>
-  <text x="155" y="44" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="bold" fill="#5b3a52" text-anchor="middle">Self-compassion</text>
+  <g transform="translate(10,5) scale(0.4)">
+    <path d="M30 110 C25 125 35 145 60 148 C85 151 110 145 130 125 C135 120 132 112 124 113 C115 114 100 125 85 128 C100 118 112 105 110 95 C108 87 98 86 92 94 C85 103 70 115 55 120 C65 110 72 100 70 92 C68 84 58 83 52 92 C46 101 38 108 30 110 Z" fill="none" stroke="#5b3a52" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M80 75
+             c0 -8 -7 -14 -14 -14
+             c-7 0 -13 6 -13 12
+             c0 10 11 18 27 29
+             c16 -11 27 -19 27 -29
+             c0 -6 -6 -12 -13 -12
+             c-7 0 -14 6 -14 14 z"
+          fill="#f4b6bd" stroke="#5b3a52" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+  <text x="160" y="44" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="bold" fill="#5b3a52" text-anchor="middle">Self-compassion</text>
 </svg>

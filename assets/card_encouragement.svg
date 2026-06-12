@@ -1,4 +1,6 @@
 <svg viewBox="0 0 260 70" xmlns="http://www.w3.org/2000/svg">
-  <text x="40" y="44" font-size="32" text-anchor="middle">🌱</text>
+  <path d="M40 55 L40 25" stroke="#5b3a52" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M40 30 C25 25 18 12 20 5 C30 8 40 18 40 30 Z" fill="#a8d5a2" stroke="#5b3a52" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M40 35 C55 30 62 17 60 10 C50 13 40 23 40 35 Z" fill="#a8d5a2" stroke="#5b3a52" stroke-width="2" stroke-linejoin="round"/>
   <text x="155" y="44" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="bold" fill="#5b3a52" text-anchor="middle">Encouragement</text>
 </svg>
