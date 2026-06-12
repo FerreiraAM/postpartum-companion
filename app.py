@@ -74,15 +74,19 @@ st.markdown(
         border-color: #e29696;
         color: #5b3a52;
     }
+    .st-key-get_support {
+        display: flex !important;
+        justify-content: center !important;
+    }
     .st-key-get_support button {
         background-color: #c97b87 !important;
         border-color: #c97b87 !important;
         color: #ffffff !important;
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
         font-weight: 600 !important;
-        padding: 0.7rem 1.5rem !important;
+        padding: 0.7rem 1.25rem !important;
         border-radius: 999px !important;
-        width: 100% !important;
+        width: auto !important;
         white-space: nowrap !important;
         display: flex !important;
         justify-content: center !important;
