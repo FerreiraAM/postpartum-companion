@@ -100,10 +100,14 @@ st.markdown(
     }
     div[class*="st-key-mood_card_"] div.stButton > button,
     div[class*="st-key-need_card_"] div.stButton > button {
+        width: 100%;
         height: 100%;
+        flex-direction: row;
         align-items: flex-end;
+        justify-content: center;
         padding-bottom: 0.5rem;
         cursor: pointer;
+        white-space: normal;
     }
     .st-key-get_support {
         display: flex !important;
